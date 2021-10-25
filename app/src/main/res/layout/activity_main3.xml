@@ -20,20 +20,6 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <TextView
-        android:id="@+id/txtpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtpass"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941" />
-
-    <TextView
         android:id="@+id/txtor2"
         android:layout_width="46dp"
         android:layout_height="23dp"
@@ -95,8 +81,8 @@
         android:layout_width="346dp"
         android:layout_height="46dp"
         android:ems="10"
+        android:hint="@string/hintEmail"
         android:inputType="textEmailAddress"
-        android:text="@string/Email"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,13 +90,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.112"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="344dp"
         android:layout_height="49dp"
         android:ems="10"
+        android:hint="@string/hintPass"
         android:inputType="textPassword"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

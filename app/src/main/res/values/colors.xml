@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="culoare">#2196F3</color>
     <color name="culoarebuton">#FFFFFF</color>
+    <color name="CuloareSignUp">#2196F3</color>
+    <color name="CuloareButonInreg">#2183F3</color>
 </resources>

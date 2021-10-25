@@ -1,5 +1,6 @@
 package eu.ase.grupa1081.tema;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnInreg;
     private Button btnLogin;
+    private final int ReqCode=200;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent newWindow=new Intent(MainActivity.this,MainActivity2.class);
-                startActivity(newWindow);
+                startActivityForResult(newWindow,ReqCode);
             }
         });
         btnLogin=findViewById(R.id.btnlogin);
@@ -33,5 +35,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newWindow2);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==ReqCode){
+            if(resultCode==RESULT_OK){
+                if(data!=null){
+                    Bundle bundle1 = data.getBundleExtra("rasplog");
+                    User u1=(User)bundle1.getSerializable("userlog");
+                    Intent newWindow3 = new Intent(MainActivity.this,MainActivity3.class);
+                    newWindow3.putExtra("login",bundle1);
+                    startActivity(newWindow3);
+                }
+            }
+        }
     }
 }

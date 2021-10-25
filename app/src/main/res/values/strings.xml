@@ -17,4 +17,13 @@
     <string name="pass">Password</string>
     <string name="forgot">Forgot password?</string>
     <string name="butonlogin">LOG IN</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintPass">Password</string>
+    <string name="eTEmailInreg">Email</string>
+    <string name="eTPassInreg">Password</string>
+    <string name="tWmin">10 characters minimum</string>
+    <string name="eTUserName">Choose a username</string>
+    <string name="UserName">4 characters minimum and 30 characters maximum</string>
+    <string name="strrB">By signing up for MyfitnessPal, you are agreeing to our Privacy Policy and Terms.</string>
+    <string name="butonsignup">Sign Up</string>
 </resources>
