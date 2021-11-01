@@ -46,7 +46,10 @@ public class MainActivity extends AppCompatActivity {
                     Bundle bundle1 = data.getBundleExtra("rasplog");
                     User u1=(User)bundle1.getSerializable("userlog");
                     Intent newWindow3 = new Intent(MainActivity.this,MainActivity3.class);
-                    newWindow3.putExtra("login",bundle1);
+                    String text1 = u1.getEmail();
+                    String text2 = u1.getPassword();
+                    newWindow3.putExtra("text1",text1);
+                    newWindow3.putExtra("text2",text2);
                     startActivity(newWindow3);
                 }
             }
