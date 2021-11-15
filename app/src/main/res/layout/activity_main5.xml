@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity5">
 
+    <Button
+        android:id="@+id/btnParsareJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/JSONString"
+        android:textAllCaps="false" />
+
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
