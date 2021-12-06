@@ -1,11 +1,23 @@
 package eu.ase.grupa1081.tema;
 
-public class Meal {
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity (tableName = "meals")
+public class Meal {
+    @PrimaryKey(autoGenerate = true)
+    private int idMeal;
+    @ColumnInfo(name = "name")
     private String name;
+    @ColumnInfo(name="calories")
     private float calories;
+    @ColumnInfo(name = "proteins")
     private float proteinvalues;
+    @ColumnInfo(name = "fats")
     private float fatvalues;
+    @ColumnInfo(name = "carbos")
     private float carbohydratesvalues;
 
     public Meal(String name, float calories, float proteinvalues, float fatvalues, float carbohydratesvalues) {
@@ -14,6 +26,14 @@ public class Meal {
         this.proteinvalues = proteinvalues;
         this.fatvalues = fatvalues;
         this.carbohydratesvalues = carbohydratesvalues;
+    }
+
+    public int getIdMeal() {
+        return idMeal;
+    }
+
+    public void setIdMeal(int idMeal) {
+        this.idMeal = idMeal;
     }
 
     public String getName() {
@@ -59,7 +79,8 @@ public class Meal {
     @Override
     public String toString() {
         return "Meal{" +
-                "name='" + name + '\'' +
+                "idMeal=" + idMeal +
+                ", name='" + name + '\'' +
                 ", calories=" + calories +
                 ", proteinvalues=" + proteinvalues +
                 ", fatvalues=" + fatvalues +

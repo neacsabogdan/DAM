@@ -16,6 +16,7 @@ public class MainActivity5 extends AppCompatActivity {
     private ListView lv;
     private MealAdapter mealAdapter;
     private Button btnJSON;
+    private MealDAO mealDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,16 @@ public class MainActivity5 extends AppCompatActivity {
                 thread.start();
             }
         });
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mealDAO = Database.getInstance(MainActivity5.this).getDataBase().mealDAO();
+                for (int i=0;i<getMeals().size();i++){
+                    mealDAO.insert(getMeals().get(i));
+                }
+            }
+        });
+        thread1.start();
     }
     private List<Meal> getMeals(){
         List<Meal> meals = new ArrayList<>();
