@@ -20,6 +20,14 @@ public class Meal {
     @ColumnInfo(name = "carbos")
     private float carbohydratesvalues;
 
+    public Meal() {
+        this.name = "";
+        this.calories =0;
+        this.proteinvalues=0;
+        this.fatvalues=0;
+        this.carbohydratesvalues=0;
+    }
+
     public Meal(String name, float calories, float proteinvalues, float fatvalues, float carbohydratesvalues) {
         this.name = name;
         this.calories = calories;
@@ -86,5 +94,14 @@ public class Meal {
                 ", fatvalues=" + fatvalues +
                 ", carbohydratesvalues=" + carbohydratesvalues +
                 '}';
+    }
+
+    public String toString2() {
+        return "Meal: " +
+                "name='" + name + '\'' +
+                ", calories=" + calories +
+                ", proteinvalues=" + proteinvalues +
+                ", fatvalues=" + fatvalues +
+                ", carbohydratesvalues=" + carbohydratesvalues;
     }
 }
